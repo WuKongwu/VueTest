@@ -5,11 +5,15 @@
     <title>hello</title>
   </head>
   <body>
-    <div id="hello">
-            <p>{{ message }}</p>
-            <input v-model="message">
+      <div id="app">
+        <div class="collection">
+          <a href="#!" class="collection-item"
+             v-for="gameName in gameNames"
+             @click="selected(gameName)"
+             :class="{active: activeName == gameName}">{{gameName}}</a>
+        </div>
     </div>
   </body>
   <script SRC="../js/vue.min.js"></script>
-  <script src="../js/hello.js"></script>
+  <script src="../js/liebiao.js"></script>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hello</title>
+       
+    <style>
+         .cl{
+            FLOAT: left;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app"  style="margin-left:80px;">           
+               <div v-for='(item, index) in imgData' v-if="(index+1)%4!=0" class="cl">
+                <label style="margin-left:40px;"> {{item.id}} </label><br>                
+                    <video width="128" height="96" controls >
+                            <source :src="item.url" type="video/mp4">
+                        </video>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br>
+               </div>
+               <div v-else>
+                  <label style="margin-left:40px;"> {{item.id}} </label> <br>     
+                    <video width="128" height="96" controls >
+                            <source :src="item.url" type="video/mp4">
+                        </video>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br>
+               </div> 
+                    <!-- <img :src="item.url"> -->
+      </div>
+  </body>
+  <script SRC="../js/vue.min.js"></script>
+  <script >  
+  var oVue = new Vue({
+         el : '#app',  
+         data : {             
+            imgData : [
+            {url: '../video/movie.mp4',
+            id:'视频A'
+          },
+          {url: '../video/movie.mp4',
+            id:'视频B'
+          },
+          {url: '../video/movie.mp4',
+            id:'视频C'
+          },
+          {url: '../video/movie.mp4',
+            id:'视频D'
+          },
+          {url: '../video/movie.mp4',
+            id:'视频E'
+          },
+          {url: '../video/movie.mp4',
+            id:'视频F'
+          },
+          {url: '../video/movie.mp4',
+            id:'视频G'
+          },
+          {url: '../video/movie.mp4',
+            id:'视频H'
+          }
+          ]
+        }
+      }); 
+      </script>
+</html>
